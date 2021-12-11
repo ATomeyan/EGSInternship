@@ -16,8 +16,7 @@ public final class CustomString {
     }
 
     public CustomString(CustomString customString) {
-
-        size = 0;
+        size = customString.length();
         this.value = customString.value.clone();
     }
 
