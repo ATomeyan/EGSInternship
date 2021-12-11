@@ -1,6 +1,7 @@
 package exercise.oop.figures.model.triangel;
 
 import exercise.oop.figures.enums.Color;
+import exercise.oop.figures.exception.TriangleIllegalException;
 import exercise.oop.figures.model.Figure;
 
 /**
@@ -14,9 +15,19 @@ public abstract class Triangle extends Figure {
     private Color color;
 
     public Triangle() {
+        super();
+
+        this.length = 0;
+        this.color = Color.WHITE;
     }
 
     public Triangle(int length, Color color) {
+        super(length, color);
+
+        if (length < 0 || color == null){
+            throw new TriangleIllegalException();
+        }
+
         this.length = length;
         this.color = color;
     }
@@ -27,61 +38,5 @@ public abstract class Triangle extends Figure {
 
     public void setColor(Color color) {
         this.color = color;
-    }
-
-    public void draw1() {
-
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j <= i; j++) {
-                System.out.print(color.getColor() + "*");
-            }
-            System.out.println();
-        }
-    }
-
-    public void draw2() {
-
-        for (int i = 1; i <= length; i++) {
-            for (int j = length; j > i; j--) {
-                System.out.print(" ");
-            }
-
-            for (int k = 1; k <= i; k++){
-                System.out.print(color.getColor() + "*");
-            }
-
-            System.out.println();
-        }
-    }
-
-    public void draw3(){
-
-        for (int i = 0; i <= length; i++){
-            for (int j = length; j >= i; j--){
-                System.out.print(color.getColor() + "*");
-            }
-
-            for (int j = 1; j < i; j++) {
-                System.out.print(" ");
-            }
-
-            System.out.println();
-        }
-    }
-    
-    public void draw4(){
-
-        for (int i = 1; i <= length; i++) {
-
-            for (int j = 1; j < i; j++) {
-                System.out.print(" ");
-            }
-
-            for (int j = length; j >= i; j--) {
-                System.out.print(color.getColor() + "*");
-            }
-
-            System.out.println();
-        }
     }
 }

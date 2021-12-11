@@ -1,7 +1,16 @@
-import exercise.CustomString;
-import exercise.oop.figures.enums.Color;
-import exercise.oop.figures.model.Rectangle;
-import exercise.oop.figures.model.Square;
+import exercise.oop.modifiedfigures.enums.Color;
+import exercise.oop.modifiedfigures.model.Figure;
+import exercise.oop.modifiedfigures.model.Rhombus;
+import exercise.oop.modifiedfigures.model.Image;
+import exercise.oop.modifiedfigures.model.Rectangle;
+import exercise.oop.modifiedfigures.model.Square;
+import exercise.oop.modifiedfigures.model.triangle.LeftBottomTriangle;
+import exercise.oop.modifiedfigures.model.triangle.LeftTopTriangle;
+import exercise.oop.modifiedfigures.model.triangle.RightBottomTriangle;
+import exercise.oop.modifiedfigures.model.triangle.Triangle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Artur Tomeyan.
@@ -11,18 +20,25 @@ import exercise.oop.figures.model.Square;
 public class Main {
     public static void main(String[] args) {
 
-        char[] chars = {'h', 'e', 'l', 'l', 'o'};
-        CustomString customString = new CustomString(chars);
+        List<Image> images = new ArrayList<>();
 
-//        CustomString.valueOf(5).print();
-        customString.substring(2, 4).printCustomString();
+        Triangle triangle1 = new RightBottomTriangle(5, Color.BLUE);
+        Triangle triangle2 = new LeftBottomTriangle(5, Color.RED);
+        Triangle triangle3 = new LeftTopTriangle(5, Color.GREEN);
 
-//        Rectangle s = new Square(4, Color.RED);
-//        Rectangle r = new Rectangle(6, 4, Color.RED);
-//
-//        s.draw();
-//
-//        System.out.println();
-//        r.draw();
+        Figure figure1 = new Rectangle(6, 4, Color.YELLOW);
+        Figure figure2 = new Square(6, Color.BLUE);
+        Figure figure3 = new Rhombus(6, Color.BLUE);
+
+        images.add(triangle1.toImage());
+        images.add(triangle2.toImage());
+        images.add(triangle3.toImage());
+        images.add(figure1.toImage());
+        images.add(figure2.toImage());
+        images.add(figure3.toImage());
+
+        for (Image i: images) {
+            System.out.println(i.getData());
+        }
     }
 }

@@ -5,9 +5,9 @@ package exercise;
  * @project EGS Internship.
  * @date 26.11.2021.
  */
-public final class CustomString{
+public final class CustomString {
 
-    private char[] value;
+    private final char[] value;
     private int size;
 
     public CustomString() {
@@ -17,6 +17,7 @@ public final class CustomString{
 
     public CustomString(CustomString customString) {
 
+        size = 0;
         this.value = customString.value.clone();
     }
 
@@ -30,9 +31,9 @@ public final class CustomString{
         }
     }
 
-    public void printCustomString(){
+    public void printCustomString() {
 
-        for (char ch: value) {
+        for (char ch : value) {
             System.out.print(ch);
         }
         System.out.println();

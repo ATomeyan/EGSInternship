@@ -1,6 +1,7 @@
 package exercise.oop.figures.model;
 
 import exercise.oop.figures.enums.Color;
+import exercise.oop.figures.exception.RectangleIllegalException;
 
 /**
  * @author Artur Tomeyan.
@@ -14,9 +15,20 @@ public class Rectangle extends Figure{
     private Color color;
 
     public Rectangle() {
+        super();
+
+        this.height = 0;
+        this.width = 0;
+        this.color = Color.WHITE;
     }
 
     public Rectangle(int width, int height, Color color) {
+        super(width, height, color);
+
+        if (width < 0 || height < 0 || color == null){
+            throw new RectangleIllegalException();
+        }
+
         this.height = height;
         this.width = width;
         this.color = color;

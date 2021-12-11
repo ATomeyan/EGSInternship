@@ -1,6 +1,7 @@
 package exercise.oop.figures.model;
 
 import exercise.oop.figures.enums.Color;
+import exercise.oop.figures.exception.SquareIllegalException;
 
 /**
  * @author Artur Tomeyan.
@@ -13,10 +14,21 @@ public class Square extends Rectangle{
     private Color color;
 
     public Square(){
+        super();
+
+        size = 0;
+        color = Color.WHITE;
     }
 
     public Square(int size, Color color) {
         super(size, size, color);
+
+        if (size < 0 || color == null){
+            throw new SquareIllegalException();
+        }
+
+        this.size = size;
+        this.color = color;
     }
 
     public int getSize() {
