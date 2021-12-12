@@ -1,4 +1,5 @@
 import exercise.oop.modifiedfigures.enums.Color;
+import exercise.oop.modifiedfigures.gallery.GalleryPainter;
 import exercise.oop.modifiedfigures.model.Figure;
 import exercise.oop.modifiedfigures.model.Rhombus;
 import exercise.oop.modifiedfigures.model.Image;
@@ -30,12 +31,17 @@ public class Main {
         Figure figure2 = new Square(6, Color.BLUE);
         Figure figure3 = new Rhombus(6, Color.BLUE);
 
+
         images.add(triangle1.toImage());
         images.add(triangle2.toImage());
         images.add(triangle3.toImage());
         images.add(figure1.toImage());
         images.add(figure2.toImage());
         images.add(figure3.toImage());
+
+        GalleryPainter galleryPainter = new GalleryPainter(images);
+
+        galleryPainter.show();
 
         for (Image i: images) {
             System.out.println(i.getData());

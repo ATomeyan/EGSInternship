@@ -1,7 +1,7 @@
 package exercise.oop.figures.model;
 
 import exercise.oop.figures.enums.Color;
-import exercise.oop.figures.exception.RhombusIllegalException;
+import exercise.oop.figures.exception.RhombusIllegalArgumentException;
 
 /**
  * @author Artur Tomeyan.
@@ -24,7 +24,7 @@ public class Rhombus extends Figure {
         super(size, color);
 
         if (size < 0 || color == null){
-            throw new RhombusIllegalException();
+            throw new RhombusIllegalArgumentException(String.format("Incorrect value of rhombus size or color %s\n", size, color));
         }
 
         this.size = size;
@@ -32,10 +32,18 @@ public class Rhombus extends Figure {
     }
 
     public void setSize(int size) {
+
+        if (size < 0){
+            System.out.printf("Incorrect value of rhombus size %s\n", size);
+        }
+
         this.size = size;
     }
 
     public void setColor(Color color) {
+        if (color == null){
+            System.out.printf("Incorrect value of rhombus color %s\n", color);
+        }
         this.color = color;
     }
 

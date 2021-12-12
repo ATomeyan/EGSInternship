@@ -1,7 +1,7 @@
 package exercise.oop.figures.model;
 
 import exercise.oop.figures.enums.Color;
-import exercise.oop.figures.exception.RectangleIllegalException;
+import exercise.oop.figures.exception.RectangleIllegalArgumentException;
 
 /**
  * @author Artur Tomeyan.
@@ -26,7 +26,7 @@ public class Rectangle extends Figure{
         super(width, height, color);
 
         if (width < 0 || height < 0 || color == null){
-            throw new RectangleIllegalException();
+            throw new RectangleIllegalArgumentException(String.format("Incorrect value of rectangle width or height or color %s\n", width, height, color));
         }
 
         this.height = height;
@@ -39,6 +39,10 @@ public class Rectangle extends Figure{
     }
 
     public void setHeight(int height) {
+        if (height < 0){
+            System.out.printf("Incorrect value of rectangle height %s\n", height);
+        }
+
         this.height = height;
     }
 
@@ -47,6 +51,10 @@ public class Rectangle extends Figure{
     }
 
     public void setWidth(int width) {
+
+        if (width < 0){
+            System.out.printf("Incorrect value of rectangle width %s\n", width);
+        }
         this.width = width;
     }
 
@@ -55,6 +63,9 @@ public class Rectangle extends Figure{
     }
 
     public void setColor(Color color) {
+        if (color == null){
+            System.out.printf("Incorrect value of rectangle color %s\n", color);
+        }
         this.color = color;
     }
 

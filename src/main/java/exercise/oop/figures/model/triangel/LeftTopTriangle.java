@@ -1,7 +1,7 @@
 package exercise.oop.figures.model.triangel;
 
 import exercise.oop.figures.enums.Color;
-import exercise.oop.figures.exception.TriangleIllegalException;
+import exercise.oop.figures.exception.TriangleIllegalArgumentException;
 
 /**
  * @author Artur Tomeyan.
@@ -24,7 +24,7 @@ public class LeftTopTriangle extends Triangle{
         super(length, color);
 
         if (length < 0 || color == null){
-            throw new TriangleIllegalException();
+            throw new TriangleIllegalArgumentException(String.format("Incorrect value of triangle length or color %s\n", length, color));
         }
 
         this.length = length;
@@ -37,6 +37,9 @@ public class LeftTopTriangle extends Triangle{
 
     @Override
     public void setLength(int length) {
+        if (length < 0) {
+            System.out.printf("Incorrect value of triangle length %s\n", length);
+        }
         this.length = length;
     }
 
@@ -46,6 +49,9 @@ public class LeftTopTriangle extends Triangle{
 
     @Override
     public void setColor(Color color) {
+        if (color == null){
+            System.out.printf("Incorrect value of triangle color %s\n", color);
+        }
         this.color = color;
     }
 

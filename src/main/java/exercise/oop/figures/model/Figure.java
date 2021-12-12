@@ -1,7 +1,7 @@
 package exercise.oop.figures.model;
 
 import exercise.oop.figures.enums.Color;
-import exercise.oop.figures.exception.FigureIllegalException;
+import exercise.oop.figures.exception.FigureIllegalArgumentException;
 
 /**
  * @author Artur Tomeyan.
@@ -22,7 +22,7 @@ public abstract class Figure {
 
     public Figure(final int size, final Color color){
         if (size < 0 || color == null){
-            throw new FigureIllegalException();
+            throw new FigureIllegalArgumentException(String.format("Incorrect value of figure size or color %s\n", size, color));
         }
 
         this.size = size;
@@ -33,7 +33,7 @@ public abstract class Figure {
     public Figure(final int size, final int height, final Color color){
 
         if (size < 0 || height < 0|| color == null){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(String.format("Incorrect value of figure size or height or color %s\n", size, height, color));
         }
 
         this.size = size;
