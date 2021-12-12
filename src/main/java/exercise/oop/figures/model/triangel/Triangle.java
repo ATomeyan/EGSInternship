@@ -17,8 +17,8 @@ public abstract class Triangle extends Figure {
     public Triangle() {
         super();
 
-        this.length = 0;
-        this.color = Color.WHITE;
+        this.length = 6;
+        this.color = Color.RED;
     }
 
     public Triangle(int length, Color color) {

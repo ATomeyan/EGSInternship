@@ -43,8 +43,8 @@ public class Main {
 
         galleryPainter.show();
 
-        for (Image i: images) {
-            System.out.println(i.getData());
-        }
+//        for (Image i: images) {
+//            System.out.println(i.getData());
+//        }
     }
 }

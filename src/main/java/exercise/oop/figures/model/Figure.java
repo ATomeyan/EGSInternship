@@ -15,9 +15,9 @@ public abstract class Figure {
     private final Color color;
 
     public Figure() {
-        this.size = 0;
-        this.color = Color.WHITE;
-        this.height = 0;
+        this.size = 6;
+        this.color = Color.RED;
+        this.height = 4;
     }
 
     public Figure(final int size, final Color color){
@@ -27,7 +27,7 @@ public abstract class Figure {
 
         this.size = size;
         this.color = color;
-        this.height = 0;
+        this.height = 4;
     }
 
     public Figure(final int size, final int height, final Color color){
