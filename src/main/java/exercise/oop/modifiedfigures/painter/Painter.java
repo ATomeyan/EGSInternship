@@ -1,4 +1,4 @@
-package exercise.oop.modifiedfigures.gallery;
+package exercise.oop.modifiedfigures.painter;
 
 import exercise.oop.modifiedfigures.exception.GalleryIllegalArgumentException;
 import exercise.oop.modifiedfigures.model.Image;
@@ -10,11 +10,11 @@ import java.util.List;
  * @project EGS Internship.
  * @date 12.12.2021.
  */
-public class GalleryPainter {
+public class Painter {
 
     private final List<Image> images;
 
-    public GalleryPainter(List<Image> images) {
+    public Painter(List<Image> images) {
         if (images == null){
             throw new GalleryIllegalArgumentException(String.format("Incorrect gallery argument %s\n", images));
         }
