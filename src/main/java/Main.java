@@ -1,5 +1,5 @@
 import exercise.oop.modifiedfigures.enums.Color;
-import exercise.oop.modifiedfigures.gallery.GalleryPainter;
+import exercise.oop.modifiedfigures.painter.Painter;
 import exercise.oop.modifiedfigures.model.Figure;
 import exercise.oop.modifiedfigures.model.Rhombus;
 import exercise.oop.modifiedfigures.model.Image;
@@ -39,7 +39,7 @@ public class Main {
         images.add(figure2.toImage());
         images.add(figure3.toImage());
 
-        GalleryPainter galleryPainter = new GalleryPainter(images);
+        Painter galleryPainter = new Painter(images);
 
         galleryPainter.show();
 

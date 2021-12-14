@@ -31,7 +31,6 @@ public class ArrayUtils {
 
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
-
                 if (array[i] % 2 == 0) {
                     even = array[i];
                     arr[i] = even;
@@ -41,22 +40,6 @@ public class ArrayUtils {
                 }
             }
         }
-
-//        int index = 0, i = 0, j = 0;
-//
-//        if (array[0] % 2 == 0)
-//            flag = true;
-//
-//        while (index < array.length) {
-//            if (flag) {
-//                arr[index++] = even[i++];
-//                flag = false;
-//            } else {
-//                arr[index++] = odd[j++];
-//                flag = true;
-//            }
-//        }
-
         return array;
     }
 
@@ -226,26 +209,20 @@ public class ArrayUtils {
      * @param array input integer number
      * @return new array length
      */
-    public static int deleteDuplicates(int[] array) {
+    public static int[] deleteDuplicates(int[] array) {
 
-        int j = 0;
+        int j = array.length;
 
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] != array[i + 1]) {
-                array[j++] = array[i];
+            for (int k = i + 1; k < array.length; k++) {
+                if (array[i] == array[k]) {
+                    array[k] = array[j - 1];
+                    j--;
+                    k--;
+                }
             }
         }
 
-        array[j++] = array[array.length - 1];
-
-        return j;
-    }
-
-    public static void main(String[] args) {
-        int[] a = {1, 2, 2, 2, 3, 4, 4, 5, 5, 5, 6};
-
-        int n = deleteDuplicates(a);
-        for (int i = 0; i < n; i++)
-            System.out.print(a[i] + " ");
+        return Arrays.copyOf(array, j);
     }
 }
