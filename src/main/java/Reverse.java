@@ -1,5 +1,3 @@
-package exercise;
-
 public class Reverse {
 
     private Reverse(){}
