@@ -2,8 +2,6 @@ import java.util.Date;
 
 /**
  * @author Artur Tomeyan.
- * @project EGS Internship.
- * @date 24.11.2021.
  */
 public final class SomeName {
 

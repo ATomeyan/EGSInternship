@@ -6,7 +6,7 @@ import homework7.modifiedfigures.enums.Color;
 /**
  * @author Artur Tomeyan.
  */
-public class Square extends Rectangle {
+public class Square extends Figure {
 
     private int size;
     private Color color;
@@ -29,6 +29,11 @@ public class Square extends Rectangle {
         this.color = color;
     }
 
+    @Override
+    public String getPattern() {
+        return null;
+    }
+
     public int getSize() {
         return size;
     }
@@ -46,7 +51,6 @@ public class Square extends Rectangle {
         return color;
     }
 
-    @Override
     public void setColor(Color color) {
         if (color == null){
             System.out.printf("Incorrect value of square color %s\n", color);

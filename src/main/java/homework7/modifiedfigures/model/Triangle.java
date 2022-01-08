@@ -5,7 +5,7 @@ import homework7.modifiedfigures.enums.Color;
 /**
  * @author Artur Tomeyan.
  */
-public abstract class Triangle extends Figure {
+public class Triangle extends Figure {
 
     private int length;
     private Color color;
@@ -26,6 +26,11 @@ public abstract class Triangle extends Figure {
 
         this.length = length;
         this.color = color;
+    }
+
+    @Override
+    public String getPattern() {
+        return null;
     }
 
     public void setLength(int length) {

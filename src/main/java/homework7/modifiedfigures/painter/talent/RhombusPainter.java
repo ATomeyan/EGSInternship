@@ -2,13 +2,17 @@ package homework7.modifiedfigures.painter.talent;
 
 import homework7.modifiedfigures.model.Image;
 import homework7.modifiedfigures.model.Rhombus;
+import homework7.modifiedfigures.painter.Painter;
+
+import java.awt.*;
 
 /**
  * @author Artur Tomeyan.
  */
-public class RhombusPainter {
+public class RhombusPainter implements Painter {
 
-    public Image toImage() {
+    @Override
+    public Image doImage() {
         Rhombus rhombus = new Rhombus();
         int size = rhombus.getSize();
         StringBuilder stringBuilder = new StringBuilder();
