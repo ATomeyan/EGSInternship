@@ -1,4 +1,4 @@
-package homework10.experiment2;
+package homework9.experiment2;
 
 /**
  * @author Artur Tomeyan.

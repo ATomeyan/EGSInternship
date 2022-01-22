@@ -1,18 +1,18 @@
-package homework11;
+package homework10;
 
 /**
  * @author Artur Tomeyan.
  */
-public class Source {
+public class SourceDTO {
 
     private Long id;
     private String firstName;
     private String lastName;
 
-    public Source() {
+    public SourceDTO() {
     }
 
-    public Source(Long id, String firstName, String lastName) {
+    public SourceDTO(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,19 +26,7 @@ public class Source {
         return firstName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 }

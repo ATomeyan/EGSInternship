@@ -1,4 +1,4 @@
-package homework10.experiment1;
+package homework9.experiment1;
 
 /**
  * @author Artur Tomeyan.
@@ -16,5 +16,10 @@ public class InterfaceTest implements Account, User{
     @Override
     public String getUserName() {
         return name;
+    }
+
+    @Override
+    public int getAge() {
+        return Account.super.getAge();
     }
 }
