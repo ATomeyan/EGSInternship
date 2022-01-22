@@ -1,6 +1,6 @@
-package homework10.list.arraylist;
+package homework9.list.arraylist;
 
-import homework10.list.CustomList;
+import homework9.list.CustomList;
 
 import java.util.Arrays;
 import java.util.Collection;

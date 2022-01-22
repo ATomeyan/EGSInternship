@@ -1,7 +1,7 @@
-package homework10.list.linkedlist;
+package homework9.list.linkedlist;
 
-import homework10.list.CustomDeque;
-import homework10.list.CustomList;
+import homework9.list.CustomDeque;
+import homework9.list.CustomList;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
